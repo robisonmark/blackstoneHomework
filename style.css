@@ -1,0 +1,13 @@
+.ng-invalid.ng-dirty {
+	border-color: #fa787E;
+} //changes color of boxes that are invaild and typed in on reviewFrom
+
+.ng-vaild.ng-dirty {
+	border-color: #78fa89;
+}
+
+width: 90%;
+height: 80%;
+
+media-query (big screen): width: 25%
+height 40%;
