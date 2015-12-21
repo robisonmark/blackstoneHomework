@@ -20,11 +20,19 @@
 			</nav>
 		</header>
 		<main>
-			<p>Flatlander's Gems was found by Frank Flatlander in December 2015 when he found the first dodecahron mine.  The colors spoke to him in a way like nothing before.  He knew that this was a product for all. 
+			<div class="panel-primary" ng-controller="StoreController as store">
+				<ul class="list-group">
+					<li class="item list-group-item" ng-repeat="product in store.products">
+						<h3><product-title></product-title></h3>
+					
+						<img ng-src="{{product.images[0].full}}" style="width: 200px; height: 200px"/>
+
+						<product-panel></product-panel>
+					</li>
+				<script type="text/javascript" src="angular.min.js"></script>
+				<script type="text/javascript" src="app.js"></script>
+				<script type="text/javascript" src="products.js"></script>
+			</div>
 		</main>
-		<footer>
-			t. 555-123-5555
-			1492 Round Circle Way, Chris Columbus, Spain
-		</footer>
 	</body>
 </html>

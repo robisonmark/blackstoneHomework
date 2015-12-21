@@ -1,0 +1,38 @@
+header{ 
+	width: 100%;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 60px;
+	display: inline-block;
+
+	#logo {
+		display: inline-block;
+	}
+
+	#navbar {
+		background-color: @nav-base;
+		color: @nav-text;
+		position: fixed;
+		width: 100%;
+		height: @navbar-height;
+		line-height: @navbar-height;
+		z-index: 3;
+		box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+
+		ul {
+			float: right;
+			text-decoration: none;
+			padding-right: 35px;
+			
+			li {
+				list-style-type: none;
+				font-weight: bold;
+				display: inline-block;
+				padding-right: 10px;
+
+			} //li
+		} //ul
+	} //nav
+} //header
