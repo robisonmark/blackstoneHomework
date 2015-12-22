@@ -7,13 +7,6 @@ var gulp = require('gulp'),
  	watch = require('gulp-watch'),
  	path = require('path');
 
-var outputDir;
-
-env = 'development';
-
-if (env==='development') {
-  outputDir = 'builds/development/';
-}
 
 gulp.task('less', function() {
 	return gulp.src('./styles/*.less')

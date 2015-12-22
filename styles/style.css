@@ -94,6 +94,13 @@ main .list-group .list-group-item:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+main .img-wrap img {
+  padding-left: 31%;
+}
+main .thumbnail {
+  width: 80px;
+  margin: auto 10px;
+}
 main blockquote {
   padding: 0;
   margin: 0;
