@@ -16,7 +16,7 @@ header #logo {
   line-height: 60px;
 }
 header #navbar {
-  background-color: #212121;
+  background-color: #00796B;
   color: #eeeeee;
   position: fixed;
   width: 100%;
@@ -56,12 +56,12 @@ main .nav-tabs li {
 main .nav-tabs li.active a {
   padding: 8px 20px;
   border: none;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1.5px solid #00dfc5;
 }
 main .nav-tabs li.active a:hover,
 main .nav-tabs li.active afocus {
   border: none;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid #00dfc5;
 }
 main .nav-tabs li a {
   text-decoration: none;
