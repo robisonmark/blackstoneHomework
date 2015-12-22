@@ -36,17 +36,25 @@
 				<p>{{reviewCtrl.review.body}}</p>
 				<cite>-{{reviewCtrl.review.author}}</cite>
 			</blockquote>
-			<select ng-model="reviewCtrl.review.stars" required>
-				<option value="1">1 star</option>
-				<option value="2">2 stars</option>
-				<option value="3">3 stars</option>
-				<option value="4">4 stars</option>
-				<option value="5">5 stars</option>
-			</select>
-			<textarea ng-model="reviewCtrl.review.body" required></textarea>
-			<label>by:</label>
-			<input ng-model="reviewCtrl.review.author" type="email" required />
-			<div> reviewFrom is {{reviewForm.$valid}} </div>
-			<input type="submit" value="Submit" />
+			<div class="form-inline">
+				<div class="form-group">
+					<select ng-model="reviewCtrl.review.stars" required placeholder="Please Rate">
+						<option value="1">1 star</option>
+						<option value="2">2 stars</option>
+						<option value="3">3 stars</option>
+						<option value="4">4 stars</option>
+						<option value="5">5 stars</option>
+					</select>
+				</div>
+				<br>
+				<div class="form-group">
+					<textarea ng-model="reviewCtrl.review.body" required placeholder="Please write a review"></textarea>
+				</div>
+				<div class="form-group">
+					<label>by:</label>
+					<input ng-model="reviewCtrl.review.author" type="email" required placeholder="youremail@email.com"/>
+				</div>
+				<input type="submit" value="Submit" />
+			</div>
 	</div>
 </section>

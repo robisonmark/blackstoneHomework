@@ -11,21 +11,17 @@
 		<header class="navigation">
 			<nav id="navbar">
 				<section id="logo">
-					<h3>Flatlander's Gems</h3>
+					<h1>Flatlander's Gem Store</h1>
 				</section>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="store.html">Store</a></li>
-				</ul>
 			</nav>
 		</header>
 		<main>
 			<div class="panel-primary" ng-controller="StoreController as store">
 				<ul class="list-group">
-					<li class="item list-group-item" ng-repeat="product in store.products">
+					<li class="item list-group-item col-md-6" ng-repeat="product in store.products">
 						<h3><product-title></product-title></h3>
 					
-						<img ng-src="{{product.images[0].full}}" style="width: 200px; height: 200px"/>
+						<product-gallery></product-gallery>
 
 						<product-panel></product-panel>
 					</li>
