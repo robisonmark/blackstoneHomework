@@ -125,29 +125,40 @@ main textarea {
   margin-bottom: 12px;
   padding: 16px 0 16px 24px;
   margin-right: 16px;
-  border-top: 1px solid #bdbdbd;
+  border-top: none;
   border-right: none;
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: 2px solid #bdbdbd;
   border-left: none;
 }
+main select {
+  height: 36px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 main select:active,
-main textarea:active,
 main select:hover,
-main textarea:hover,
-main select:focus,
-main textarea:focus {
+main select:focus {
   background-color: #eeeeee;
 }
 main select:before,
-main textarea:before,
-main select:after,
-main textarea:after {
+main select:after {
   border: none;
+  background-color: transparent;
 }
-main select option,
-main textarea option {
+main select option {
   padding-top: 12px;
   padding-bottom: 12px;
+}
+main .caret {
+  border-color: #909090 transparent;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  width: 0;
+  height: 0;
+  margin-left: -2px;
+  top: 50%;
+  margin-top: -2px;
+  position: absolute;
 }
 blockquote {
   font-size: 1.5em;

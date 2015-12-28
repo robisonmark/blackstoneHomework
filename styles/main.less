@@ -113,10 +113,17 @@ main {
 		margin-bottom: 12px;
 		padding: 16px 0 16px 24px;
 		margin-right: 16px;
-		border-top: 1px solid #bdbdbd;
+		border-top: none;
 		border-right: none;
-		border-bottom: 1px solid #bdbdbd;
+		border-bottom: 2px solid #bdbdbd;
 		border-left: none;
+	
+	} //select, textarea
+	
+	select{
+		height: 36px;
+		-webkit-appearance: none;  
+     	-moz-appearance: none;
 
 		&:active, &:hover, &:focus {
 			background-color: @nav-text;
@@ -124,13 +131,14 @@ main {
 
 		&:before, &:after {
 			border: none;
+			background-color:transparent;
 		}
-
 
 		option{
 			padding-top: 12px;
 			padding-bottom: 12px;
-
 		}
-	} //select, textarea
+		
+
+	} //select
 } //main
