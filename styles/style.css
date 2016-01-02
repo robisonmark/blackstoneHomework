@@ -194,9 +194,15 @@ main label {
 }
 main input:focus ~ label#email,
 main textarea:focus ~ label {
-  top: 20px;
+  top: 25px;
   font-size: 12px;
   color: #01579B;
+}
+main input:valid ~ label#email,
+main textarea:valid ~ label {
+  top: 25px;
+  color: #bdbdbd;
+  font-size: 12px;
 }
 main textarea {
   width: 100%;
@@ -205,7 +211,7 @@ main textarea {
   margin-right: 16px;
   border-top: none;
   border-right: none;
-  border-bottom: 2px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
   border-left: none;
   float: left;
   resize: none;
@@ -222,7 +228,7 @@ main input[type=email] {
   margin-right: 16px;
   border-top: none;
   border-right: none;
-  border-bottom: 2px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
   border-left: none;
   float: left;
   transition: 0.2s ease all;
@@ -246,7 +252,7 @@ main label#email {
 main input[type=submit] {
   min-width: 64px;
   height: 36px;
-  x-index: 0;
+  z-index: 0;
   background-color: #4caf50;
   border: none;
   border-radius: 5px;
@@ -260,6 +266,19 @@ main input[type=submit] {
   padding-left: 16px;
   padding-right: 16px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+  outline: 0;
+  -moz-outline-style: none;
+  margin-bottom: 30px;
+}
+main input[type=submit]:hover {
+  background-color: rgba(56, 142, 60, 0.12);
+  outline: 0;
+  -moz-outline-style: none;
+}
+main input[type=submit]:active {
+  box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.4);
+  outline: 0;
+  -moz-outline-style: none;
 }
 blockquote {
   font-size: 1.5em;

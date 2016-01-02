@@ -189,12 +189,19 @@ main {
   		-webkit-transition:0.2s ease all;
 	} //label
 
-	input:focus ~ label#email, textarea:focus ~ label {
-	  	top:20px;
+	input:focus ~ label#email, textarea:focus ~ label{
+	  	top:25px;
 	  	font-size: 12px;
 	  	color: @nav-base;
+
+	  	
 	} // label focus color for select and textarea
 	
+	input:valid ~ label#email, textarea:valid ~ label {
+			top:25px;
+	  		color: #bdbdbd;
+	  		font-size: 12px;
+	  	}
 
 	textarea {
 		width:100%;
@@ -203,7 +210,7 @@ main {
 		margin-right: 16px;
 		border-top: none;
 		border-right: none;
-		border-bottom: 2px solid #bdbdbd;
+		border-bottom: 1px solid #bdbdbd;
 		border-left: none;
 		float: left;
 		resize: none;
@@ -223,7 +230,7 @@ main {
 		margin-right: 16px;
 		border-top: none;
 		border-right: none;
-		border-bottom: 2px solid #bdbdbd;
+		border-bottom: 1px solid #bdbdbd;
 		border-left: none;
 		float: left;
 		transition:0.2s ease all; 
@@ -252,7 +259,7 @@ main {
 	input[type=submit] {
 		min-width: 64px; 
 		height: 36px; 
-		x-index: 0;
+		z-index: 0;
 		background-color: @nav-accent;
 		border: none;
 		border-radius: 5px;
@@ -266,6 +273,22 @@ main {
 	    padding-left: 16px;
 	    padding-right: 16px;
 	    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+	    outline: 0;
+	   	-moz-outline-style: none;
+	   	margin-bottom: 30px;
+	
+	    &:hover {
+	    	background-color: rgba(56, 142, 60, 0.12);
+	    	outline: 0;
+	   		-moz-outline-style: none;
+	    
+	    }
+
+	    &:active {
+	    	box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.4);
+	    	outline: 0;
+	   		-moz-outline-style: none;
+	    }
 	} //submit button
 
 } //main

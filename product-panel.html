@@ -24,15 +24,13 @@
 		</blockquote>
 	</div>
 	<div class="panel" ng-show="panel.isSelected(3)">
-		<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+		<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" ng-submit="$event.preventDefault()" novalidate>
 			<h4>Please Rate Product:</h4>
 			<blockquote>
 				<b> Rating: {{reviewCtrl.review.stars}} out of 5</b>
 				<p>{{reviewCtrl.review.body}}</p>
 				<cite>-{{reviewCtrl.review.author}}</cite>
 			</blockquote>
-			
-
 				<div class="form-group">
 					<div class="rate">
 						<span class="star-rating clearfix">
