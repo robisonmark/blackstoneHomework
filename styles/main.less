@@ -2,12 +2,15 @@ main {
 	width: 90%;
 	margin: auto;
 
-
 	.tabs {
 		background-color: transparent;
    		width: 100%;
+   		padding-left: 0;
    		border-bottom: none;
-   		padding-left: 0px;
+   		-webkit-box-pack: center;
+   		-webkit-justify-content: center;
+    	-ms-flex-pack: center;
+    	justify-content: center;
 
    		li{
    			height: 48px;
@@ -26,6 +29,7 @@ main {
    				text-decoration: none;
    				color: @tab-main;
    				outline: none;
+   				font-weight: 500;
    				
    				&:hover {
 	   				background-color: transparent;
@@ -41,27 +45,20 @@ main {
 	   				border: none;
 	   				border-bottom: 2px solid @nav-accent;
 
-	   				
-
 	   				&:hover, &:focus, &:active {
 	   					border: none;
 	   					border-bottom: 2px solid @nav-accent;
 	   					outline: 0;
 	   					-moz-outline-style: none;
 
-
-	   				} // hover, focus
+	   				} // hover, focus, active (selector)
 	   			} //a
-	   		} //active
+	   		} //active class
    			
 
    		} // li
 	} // tabs
 
-	.panel-primary {
-		height: 400px;
-
-	} //panel-primary
 
 	.list-group{
 
@@ -87,14 +84,25 @@ main {
 	
 	.img-wrap{
 		img{
+			height: 180px;
 			padding-left: 31%;
-		}
-	}
+		} //img
+	} //img-wrap
+
+	.gallery {
+		text-align:center;
+		padding-right: 40px;
+
+		li{
+			display: inline-block;
+    		float: none;
+		} //li
+	} //gallery
 
 	.thumbnail {
 		width: 80px;
 		margin: 25px 10px;
-	}
+	} //thumbnail
 
 	blockquote {
 		padding: 0;
@@ -105,10 +113,90 @@ main {
 
 	.form-group {
 		width:100%;
-		margin-bottom: 12px;
+		position:relative; 
+
 	} //form-group
 
-	select, textarea {
+	.star-rating{
+	  	font-size:0;
+	  	white-space:nowrap;
+	  	display:inline-block;
+	  	width:125px;
+	  	height:25px;
+	  	overflow:hidden;
+	  	position:relative;
+	  	background:
+	      	url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+	  	background-size: contain;
+	  
+	  	i{
+	    	opacity: 0;
+	    	position: absolute;
+	    	left: 0;
+	    	top: 0;
+	    	height: 100%;
+	    	width: 20%;
+	    	z-index: 1;
+	    	background: 
+	        	url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');  
+	    	background-size: contain;
+	  	} //i
+	  	
+	  	input{ 
+	    	-moz-appearance:none;
+	    	-webkit-appearance:none;
+	    	opacity: 0;
+	    	display:inline-block;
+	    	width: 20%;
+	    	height: 100%; 
+	    	margin:0;
+	    	padding:0;
+	    	z-index: 2;
+	    	position: relative;
+	    		&:hover + i,
+	    		&:checked + i{
+	      			opacity:1;    
+	    		} //&checked
+	  		} //input
+	  
+	  	i ~ i{
+	    	width: 40%;
+	  	} //defines width after 2 buttons
+	  	
+	  	i ~ i ~ i{
+	    	width: 60%;
+	  	} //after 3 buttons
+	  	
+	  	i ~ i ~ i ~ i{
+	    	width: 80%;
+	  	} //after 4 buttons
+	  	
+	  	i ~ i ~ i ~ i ~ i{
+	    	width: 100%;
+	  	} //after 5 buttons
+	} //star-rating from Jess @iconfinder
+
+	label {
+		color: #999;
+		position:absolute;
+		margin: -30px 0 8px 0;
+		font-size: 16px;
+		display:block;
+		top: 67px;
+		left: 5px;
+ 		transition:0.2s ease all; 
+ 		-moz-transition:0.2s ease all; 
+  		-webkit-transition:0.2s ease all;
+	} //label
+
+	input:focus ~ label#email, textarea:focus ~ label {
+	  	top:20px;
+	  	font-size: 12px;
+	  	color: @nav-base;
+	} // label focus color for select and textarea
+	
+
+	textarea {
 		width:100%;
 		margin-bottom: 12px;
 		padding: 16px 0 16px 24px;
@@ -117,28 +205,67 @@ main {
 		border-right: none;
 		border-bottom: 2px solid #bdbdbd;
 		border-left: none;
-	
-	} //select, textarea
-	
-	select{
-		height: 36px;
-		-webkit-appearance: none;  
-     	-moz-appearance: none;
+		float: left;
+		resize: none;
 
-		&:active, &:hover, &:focus {
-			background-color: @nav-text;
-		}
-
-		&:before, &:after {
-			border: none;
-			background-color:transparent;
-		}
-
-		option{
-			padding-top: 12px;
-			padding-bottom: 12px;
-		}
+		&:focus, {
+			outline:none;
+			border-bottom: 2px solid @nav-base;
+			box-shadow: none;
+		} //focus
 		
+	} // textarea
 
-	} //select
+	input[type=email] {
+		width:100%;
+		margin-bottom: 12px;
+		padding: 16px 0 16px 24px;
+		margin-right: 16px;
+		border-top: none;
+		border-right: none;
+		border-bottom: 2px solid #bdbdbd;
+		border-left: none;
+		float: left;
+		transition:0.2s ease all; 
+  		-moz-transition:0.2s ease all; 
+  		-webkit-transition:0.2s ease all;
+
+		&:focus {
+			outline:none;
+			border-bottom: 2px solid red;
+			box-shadow: none;
+		} //focus
+
+		&.ng-invalid.ng-dirty {
+			border-color: #fa787E;
+		} //changes color of boxes that are invaild and typed in on reviewFrom
+
+		&.ng-vaild.ng-dirty {
+			border-color: #78fa89;
+		}	
+	} //input-email
+
+	label#email {
+			top: 45px;
+		}
+
+	input[type=submit] {
+		min-width: 64px; 
+		height: 36px; 
+		x-index: 0;
+		background-color: @nav-accent;
+		border: none;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+		-moz-border-radius: 5px;
+	    color: #fff;
+	    font-size: 14px;
+	    font-weight: 500;
+	    text-transform: uppercase;
+	    padding-left: 16px;
+	    padding-right: 16px;
+	    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+	} //submit button
+
 } //main

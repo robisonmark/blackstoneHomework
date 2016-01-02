@@ -24,39 +24,45 @@
 		</blockquote>
 	</div>
 	<div class="panel" ng-show="panel.isSelected(3)">
-		<h4>Reviews</h4>
-		<blockquote ng-repeat="review in product.reviews">
-			<b> Stars: {{review.stars}}</b>
-			<p>{{review.body}}</p>
-			<cite>-{{review.author}}</cite>
-		</blockquote>
 		<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+			<h4>Please Rate Product:</h4>
 			<blockquote>
-				<b> Stars: {{reviewCtrl.review.stars}}</b>
+				<b> Rating: {{reviewCtrl.review.stars}} out of 5</b>
 				<p>{{reviewCtrl.review.body}}</p>
 				<cite>-{{reviewCtrl.review.author}}</cite>
 			</blockquote>
-			<div class="form-inline">
+			
+
 				<div class="form-group">
-					<label for="rate-item">Please Rate Item</label>
-					<span class="caret"></span>
-					 	<select ng-model="reviewCtrl.review.stars" required placeholder="Please Rate">
-							<option value="1">1 star</option>
-							<option value="2">2 stars</option>
-							<option value="3">3 stars</option>
-							<option value="4">4 stars</option>
-							<option value="5">5 stars</option>
-					</select>
+					<div class="rate">
+						<span class="star-rating clearfix">
+							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="1"><i></i>
+							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="2"><i></i>
+							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="3"><i></i>
+							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="4"><i></i>
+							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="5"><i></i>
+						</span>
+					</div>
 				</div>
-				<br>
-				<div class="form-group">
-					<textarea ng-model="reviewCtrl.review.body" required placeholder="Please write a review"></textarea>
+				<div class="form-group clearfix">
+					<textarea ng-model="reviewCtrl.review.body" required></textarea>
+					<label for="write-review" id="review">Please write a review</label>
 				</div>
-				<div class="form-group">
-					<label>by:</label>
-					<input ng-model="reviewCtrl.review.author" type="email" required placeholder="youremail@email.com"/>
+				<div class="form-group clearfix">
+					<input ng-model="reviewCtrl.review.author" type="email" required/>
+					<label for="author" id="email">by:</label>
 				</div>
 				<input type="submit" value="Submit" />
-			</div>
+								
+			<h4>Reviews:</h4>
+				<blockquote ng-repeat="review in product.reviews">
+					<b> Rating: {{review.stars}} out of 5</b>
+					<p>{{review.body}}</p>
+					<cite>-{{review.author}}</cite>
+				</blockquote>
+				
+				
+			
+		</form>
 	</div>
 </section>
