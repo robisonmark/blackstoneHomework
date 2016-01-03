@@ -16,19 +16,25 @@
 			</nav>
 		</header>
 		<main>
-			<div class="panel-primary" ng-controller="StoreController as store">
-				<ul class="list-group">
-					<li class="item list-group-item" ng-repeat="product in store.products">
-						<h3><product-title></product-title></h3>
+		<div ng-controller="StoreController as store">
+			<div ng-repeat="product in store.products">
+				<div ng-if="$index % 3 == 0" class="clearfix"></div>
+					<div class="col-md-4 panel-primary">
+						<ul class="list-group">
+							<li class="item list-group-item">
+								<h3><product-title></product-title></h3>
 					
-						<product-gallery></product-gallery>
+								<product-gallery></product-gallery>
 
-						<product-panel></product-panel>
-					</li>
-				<script type="text/javascript" src="angular.min.js"></script>
-				<script type="text/javascript" src="./app.js"></script>
-				<script type="text/javascript" src="products.js"></script>
+								<product-panel></product-panel>
+							</li> 
+						</ul>
+					</div>
+				</div>
 			</div>
 		</main>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+		<script type="text/javascript" src="products.js"></script>
 	</body>
 </html>

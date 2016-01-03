@@ -17,6 +17,10 @@ header #logo {
   margin: -10px 6% 0px;
   line-height: 60px;
 }
+header #logo h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
 header #navbar {
   background-color: #01579B;
   color: #eeeeee;
@@ -42,6 +46,9 @@ main {
   width: 90%;
   margin: auto;
 }
+main .primary-panel {
+  width: 300px;
+}
 main .tabs {
   background-color: transparent;
   width: 100%;
@@ -56,19 +63,17 @@ main .tabs li {
   height: 48px;
   display: inline-block;
   text-align: center;
-  width: 32.8%;
   max-width: 264px;
   min-width: 72px;
 }
 main .tabs li a {
-  width: 33%;
-  padding: 10px 12px 18px;
-  font-size: 14px;
+  padding: 10px 6px 18px;
+  font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
-  color: rgba(76, 175, 80, 0.7);
   outline: none;
   font-weight: 500;
+  color: rgba(76, 175, 80, 0.7);
 }
 main .tabs li a:hover {
   background-color: transparent;
@@ -88,7 +93,7 @@ main .tabs li.active a:active {
   -moz-outline-style: none;
 }
 main .list-group {
-  width: 500px;
+  width: 300px;
   margin: auto;
 }
 main .list-group .list-group-item {
@@ -106,23 +111,23 @@ main .list-group .list-group-item:first-child {
 }
 main .img-wrap img {
   height: 180px;
-  padding-left: 31%;
+  padding: 0px 15% 0px;
 }
 main .gallery {
   text-align: center;
-  padding-right: 40px;
+  padding-left: 0px;
 }
 main .gallery li {
   display: inline-block;
   float: none;
 }
 main .thumbnail {
-  width: 80px;
-  margin: 25px 10px;
+  width: 65px;
+  margin: 25px 5px;
 }
 main blockquote {
   padding: 0;
-  margin: 0;
+  margin: 10px;
   border: none;
   font-size: 1em;
 }
@@ -237,17 +242,19 @@ main input[type=email] {
 }
 main input[type=email]:focus {
   outline: none;
-  border-bottom: 2px solid red;
   box-shadow: none;
-}
-main input[type=email].ng-invalid.ng-dirty {
-  border-color: #fa787E;
-}
-main input[type=email].ng-vaild.ng-dirty {
-  border-color: #78fa89;
 }
 main label#email {
   top: 45px;
+}
+main .error {
+  font-size: 12px;
+  font-weight: 500;
+  color: #DD2C00;
+  padding: 4px 0;
+}
+main input:-webkit-autofill {
+  background-color: transparent;
 }
 main input[type=submit] {
   min-width: 64px;
@@ -269,16 +276,32 @@ main input[type=submit] {
   outline: 0;
   -moz-outline-style: none;
   margin-bottom: 30px;
+  position: relative;
+}
+main input[type=submit]:disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.26);
 }
 main input[type=submit]:hover {
-  background-color: rgba(56, 142, 60, 0.12);
+  background-color: rgba(56, 142, 60, 0.76);
   outline: 0;
   -moz-outline-style: none;
 }
 main input[type=submit]:active {
+  background-color: #4caf50;
   box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.4);
   outline: 0;
   -moz-outline-style: none;
+}
+main input.ng-invalid.ng-dirty {
+  outline: 0;
+  -moz-outline-style: none;
+  border-bottom: 2px solid #DD2C00;
+}
+main input.ng-valid-email.ng-dirty {
+  outline: 0;
+  -moz-outline-style: none;
+  border-bottom: 2px solid #78fa89;
 }
 blockquote {
   font-size: 1.5em;

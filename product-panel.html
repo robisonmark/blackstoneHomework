@@ -33,7 +33,7 @@
 			</blockquote>
 				<div class="form-group">
 					<div class="rate">
-						<span class="star-rating clearfix">
+						<span class="star-rating clearfix" required>
 							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="1"><i></i>
 							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="2"><i></i>
 							<input type="radio" ng-model="reviewCtrl.review.stars"name="rating" value="3"><i></i>
@@ -47,20 +47,19 @@
 					<label for="write-review" id="review">Please write a review</label>
 				</div>
 				<div class="form-group clearfix">
-					<input ng-model="reviewCtrl.review.author" type="email" required/>
+					<input ng-model="reviewCtrl.review.author" type="email" ng-model="email" name="email" required/>
 					<label for="author" id="email">by:</label>
+					<span class="error" ng-show="reviewForm.email.$error.email">Please Enter Valid Email</span>
 				</div>
-				<input type="submit" value="Submit" />
-								
-			<h4>Reviews:</h4>
-				<blockquote ng-repeat="review in product.reviews">
-					<b> Rating: {{review.stars}} out of 5</b>
-					<p>{{review.body}}</p>
-					<cite>-{{review.author}}</cite>
-				</blockquote>
 				
-				
-			
+				<input ng-disabled="reviewForm.$invalid" type="submit" value="Submit" />
 		</form>
+								
+		<h4>Reviews:</h4>
+		<blockquote ng-repeat="review in product.reviews">
+			<b> Rating: {{review.stars}} out of 5</b>
+			<p>{{review.body}}</p>
+			<cite>-{{review.author}}</cite>
+		</blockquote>
 	</div>
 </section>

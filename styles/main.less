@@ -2,6 +2,10 @@ main {
 	width: 90%;
 	margin: auto;
 
+	.primary-panel {
+		width: 300px;
+	}
+
 	.tabs {
 		background-color: transparent;
    		width: 100%;
@@ -16,21 +20,21 @@ main {
    			height: 48px;
    			display: inline-block;
    			text-align: center;
-   			width: 32.8%;
+   			
    			max-width: 264px;
    			min-width: 72px;
    			
 
    			a{
-   				width: 33%;
-   				padding: 10px 12px 18px;
-   				font-size: 14px;
+   				padding: 10px 6px 18px;
+   				font-size: 12px;
    				text-transform: uppercase;
    				text-decoration: none;
    				color: @tab-main;
    				outline: none;
    				font-weight: 500;
-   				
+   				color: rgba(76, 175, 80, 0.7);
+
    				&:hover {
 	   				background-color: transparent;
 	   				border: none;
@@ -62,7 +66,7 @@ main {
 
 	.list-group{
 
-		width: 500px;
+		width: 300px;
 		margin: auto;
 
 		.list-group-item{
@@ -85,13 +89,13 @@ main {
 	.img-wrap{
 		img{
 			height: 180px;
-			padding-left: 31%;
+			padding: 0px 15% 0px;
 		} //img
 	} //img-wrap
 
 	.gallery {
 		text-align:center;
-		padding-right: 40px;
+		padding-left: 0px;
 
 		li{
 			display: inline-block;
@@ -100,13 +104,13 @@ main {
 	} //gallery
 
 	.thumbnail {
-		width: 80px;
-		margin: 25px 10px;
+		width: 65px;
+		margin: 25px 5px;
 	} //thumbnail
 
 	blockquote {
 		padding: 0;
-		margin: 0;
+		margin: 10px;
 		border: none;
 		font-size: 1em;
 	} //blockquote
@@ -201,7 +205,7 @@ main {
 			top:25px;
 	  		color: #bdbdbd;
 	  		font-size: 12px;
-	  	}
+	  	} //label unselect
 
 	textarea {
 		width:100%;
@@ -239,22 +243,27 @@ main {
 
 		&:focus {
 			outline:none;
-			border-bottom: 2px solid red;
+			
 			box-shadow: none;
 		} //focus
 
-		&.ng-invalid.ng-dirty {
-			border-color: #fa787E;
-		} //changes color of boxes that are invaild and typed in on reviewFrom
 
-		&.ng-vaild.ng-dirty {
-			border-color: #78fa89;
-		}	
 	} //input-email
 
 	label#email {
 			top: 45px;
 		}
+
+	.error {
+		font-size: 12px;
+		font-weight: 500;
+		color: #DD2C00;
+		padding: 4px 0;
+	}
+
+	input:-webkit-autofill {
+		background-color: transparent;
+	}
 
 	input[type=submit] {
 		min-width: 64px; 
@@ -276,19 +285,43 @@ main {
 	    outline: 0;
 	   	-moz-outline-style: none;
 	   	margin-bottom: 30px;
+	   	position: relative;
 	
+	    &:disabled {
+	    	color: rgba(0, 0, 0, 0.26);
+	    	background-color: rgba(0, 0, 0, 0.26);
+	    }
+
 	    &:hover {
-	    	background-color: rgba(56, 142, 60, 0.12);
+	    	background-color: rgba(56, 142, 60, 0.76);
 	    	outline: 0;
 	   		-moz-outline-style: none;
 	    
-	    }
+	    } //:hover
 
 	    &:active {
+	    	background-color: @nav-accent;
 	    	box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.4);
 	    	outline: 0;
 	   		-moz-outline-style: none;
-	    }
+	    } //:active
 	} //submit button
 
+		input.ng-invalid.ng-dirty {
+			outline: 0;
+			-moz-outline-style: none;
+			border-bottom: 2px solid #DD2C00;
+
+
+		} //changes color of boxes that are invaild and typed in on reviewFrom
+
+		input.ng-valid-email.ng-dirty {
+			outline: 0;
+			-moz-outline-style: none;
+			border-bottom: 2px solid #78fa89;
+
+		} //changes color border-bottom color once valid email is typed
 } //main
+
+	
+
